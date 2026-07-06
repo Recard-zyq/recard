@@ -103,7 +103,9 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/Recard-zyq/recard.github.io.git
+  branch: gh-pages
 
 # hexo-bangumis 追番插件配置
 # 数据源：bgm.tv
