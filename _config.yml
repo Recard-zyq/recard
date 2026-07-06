@@ -13,8 +13,8 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://recard-zyq.github.io/recard.github.io
-root: /recard.github.io/
+url: https://recard-zyq.github.io/recard
+root: /recard/
 permalink: :title/
 permalink_defaults:
 pretty_urls:
@@ -104,7 +104,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/Recard-zyq/recard.github.io.git
+  repo: https://github.com/Recard-zyq/recard.git
   branch: gh-pages
 
 # hexo-bangumis 追番插件配置
