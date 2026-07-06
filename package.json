@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "hexo": "^8.0.0",
-    "hexo-bangumis": "^1.2.1",
+    "hexo-bangumis": "file:./hexo-bangumis",
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",

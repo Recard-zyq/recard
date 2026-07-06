@@ -16,7 +16,7 @@ hexo.extend.filter.register('after_render:html', function(htmlContent){
       e.preventDefault();
       tabs.forEach(t => t.classList.remove('bangumi-active'));
       tab.classList.add('bangumi-active');
-      for (let i = 1; i <= 3; i++) {
+      for (let i = 1; i <= 5; i++) {
         const item = document.getElementById('bangumi-item' + i);
         if (item) {
           if (i === (index + 1)) {
@@ -32,7 +32,7 @@ hexo.extend.filter.register('after_render:html', function(htmlContent){
 
 // 2. 分页处理逻辑 (重构：精准定位项目，彻底杜绝混入其他标签导致的 JavaScript 中断)
 (function(){
-  for (let i = 1; i <= 3; i++) {
+  for (let i = 1; i <= 5; i++) {
     const container = document.getElementById('bangumi-item' + i);
     if (!container) continue;
     const items = Array.from(container.querySelectorAll('.bangumi-item'));
@@ -103,6 +103,8 @@ document.addEventListener("DOMContentLoaded", function() {
   // 替换番剧信息列表中的属性标签文字
   htmlContent = htmlContent.replace(/>\s*(?:在看|Doing)\s*<\/span>/g, '>正在看</span>');
   htmlContent = htmlContent.replace(/>\s*(?:已看|Collect)\s*<\/span>/g, '>看过</span>');
+  htmlContent = htmlContent.replace(/>\s*(?:搁置|On Hold)\s*<\/span>/g, '>搁置</span>');
+  htmlContent = htmlContent.replace(/>\s*(?:抛弃|Dropped)\s*<\/span>/g, '>抛弃</span>');
 
   return htmlContent;
 });
