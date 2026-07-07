@@ -463,12 +463,7 @@ module.exports.getBgmData = /*#__PURE__*/function () {
         case 26:
           bangumiList = _context6.t0;
           if (bgmtv_uid) {
-            fs.writeFile(path.join(bangumisPath, '/index.json'), JSON.stringify(bangumiList), function (err) {
-              if (err) {
-                log.info('Failed to write data to bangumis/index.json');
-                console.error(err);
-              }
-            });
+            fs.writeFileSync(path.join(bangumisPath, '/index.json'), JSON.stringify(bangumiList));
           }
 
           // for each bangumi, get its information in detail
@@ -560,12 +555,7 @@ module.exports.getBgmData = /*#__PURE__*/function () {
             onHold: onHold,
             dropped: dropped
           };
-          fs.writeFile(path.join(bangumisPath, '/bangumis.json'), JSON.stringify(result), function (err) {
-            if (err) {
-              log.info('Failed to write data to cache/bangumis.json');
-              console.error(err);
-            }
-          });
+          fs.writeFileSync(path.join(bangumisPath, '/bangumis.json'), JSON.stringify(result));
           total = bangumiList.wantWatch.length + bangumiList.watching.length + bangumiList.watched.length + bangumiList.onHold.length + bangumiList.dropped.length;
           succeed = result.wantWatch.length + result.watching.length + result.watched.length + result.onHold.length + result.dropped.length;
           failed = total - succeed;
